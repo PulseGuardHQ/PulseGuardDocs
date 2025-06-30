@@ -1,0 +1,146 @@
+---
+title: 'Domain Monitoring'
+description: 'Monitor your websites and API endpoints'
+---
+
+## Overview
+
+Domain monitoring allows you to track the uptime, SSL certificate validity, and response time of your websites and API endpoints. This ensures you're always aware of your websites' performance and can quickly respond to any issues.
+
+## Key Features
+
+<CardGroup cols={3}>
+  <Card title="Uptime Monitoring" icon="check-circle" color="#22C55E">
+    Monitor your website's availability with checks every 1-5 minutes from multiple locations worldwide.
+  </Card>
+  <Card title="SSL Monitoring" icon="lock" color="#3B82F6">
+    Track SSL certificate validity and receive alerts before certificates expire.
+  </Card>
+  <Card title="Performance" icon="bolt" color="#8B5CF6">
+    Monitor response times and page load speeds to ensure optimal performance.
+  </Card>
+</CardGroup>
+
+## Adding a Domain
+
+Follow these steps to add a new domain for monitoring:
+
+<Steps>
+  <Step title="Navigate to the Domains section">
+    Click on "Domains" in the main sidebar navigation.
+  </Step>
+  <Step title="Add a new domain">
+    Click on the "Add New" button in the sidebar and select "Add New Domain".
+  </Step>
+  <Step title="Enter the domain URL">
+    Enter the full URL including the protocol (e.g., https://example.com).
+  </Step>
+  <Step title="Configure monitoring preferences">
+    Set check frequency, alert thresholds, and notification preferences.
+  </Step>
+  <Step title="Save to start monitoring">
+    Click the "Save" button to begin monitoring your domain.
+  </Step>
+</Steps>
+
+## Domain Details
+
+For each domain, you can view detailed information such as:
+
+<AccordionGroup>
+  <Accordion title="Current Status">
+    Real-time status (up/down) with visual indicators and uptime percentage with historical data.
+  </Accordion>
+  <Accordion title="Response Time">
+    Charts showing response time performance over time and comparison against historical baselines.
+  </Accordion>
+  <Accordion title="SSL Certificate Details">
+    Certificate expiration dates, issuer information, and security rating.
+  </Accordion>
+  <Accordion title="Historical Data">
+    Detailed logs of past incidents with timestamps and duration.
+  </Accordion>
+  <Accordion title="Alert History">
+    Record of all alerts sent and notification settings configuration.
+  </Accordion>
+</AccordionGroup>
+
+## Domain Dashboard Example
+
+Here's an example of what the domain monitoring dashboard looks like:
+
+<Frame>
+  <div className="bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg p-6">
+    <div className="flex items-center justify-between mb-4">
+      <div className="flex items-center">
+        <div className="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
+        <span className="font-medium">example.com</span>
+      </div>
+      <span className="text-sm text-gray-500">Last checked: 2 minutes ago</span>
+    </div>
+    <div className="h-32 bg-gray-100 dark:bg-gray-600 rounded-lg mb-4 flex items-center justify-center">
+      <span className="text-gray-400">Response Time Chart</span>
+    </div>
+    <div className="grid grid-cols-3 gap-4 text-center">
+      <div>
+        <div className="text-sm text-gray-500">Uptime</div>
+        <div className="font-bold">99.98%</div>
+      </div>
+      <div>
+        <div className="text-sm text-gray-500">Response</div>
+        <div className="font-bold">152ms</div>
+      </div>
+      <div>
+        <div className="text-sm text-gray-500">SSL Valid</div>
+        <div className="font-bold">75 days</div>
+      </div>
+    </div>
+  </div>
+  <figcaption>Example domain dashboard visualization</figcaption>
+</Frame>
+
+## Notification Options
+
+When a domain goes down or experiences issues, PulseGuard can notify you through various channels:
+
+<CardGroup cols={2}>
+  <Card title="Email Notifications" icon="envelope">
+    Receive email alerts when issues are detected
+  </Card>
+  <Card title="Slack" icon="slack">
+    Get notifications directly in your Slack channels
+  </Card>
+  <Card title="Discord" icon="discord">
+    Receive alerts in Discord servers
+  </Card>
+  <Card title="Telegram" icon="telegram">
+    Get instant notifications via Telegram
+  </Card>
+</CardGroup>
+
+## Advanced Settings
+
+<AccordionGroup>
+  <Accordion title="Check Frequency">
+    Set how often PulseGuard should check your domain:
+    - Free plan: Every 5 minutes
+    - Pro plan: Every 1 minute
+    - Expert plan: Every 30 seconds
+  </Accordion>
+  <Accordion title="Alert Thresholds">
+    Configure when alerts should be triggered:
+    - Response time thresholds (e.g., alert when response time > 2 seconds)
+    - SSL expiry warnings (e.g., 30, 14, and 7 days before expiration)
+    - Number of consecutive failures before alerting
+  </Accordion>
+  <Accordion title="Authentication">
+    For protected resources, you can configure:
+    - HTTP Basic Authentication
+    - Custom headers
+    - Cookie-based authentication
+  </Accordion>
+</AccordionGroup>
+
+<Note>
+  Some advanced features may only be available on Pro or Expert plans.
+</Note> 
