@@ -143,6 +143,18 @@
               "api-reference/service-monitors/delete",
               "api-reference/service-monitors/check"
             ]
+          },
+          {
+            "group": "AI & Anomalies",
+            "pages": [
+              "api-reference/ai/analyze-domain",
+              "api-reference/ai/get-explanation",
+              "api-reference/ai/get-summary",
+              "api-reference/ai/get-anomalies",
+              "api-reference/ai/resolve-anomaly",
+              "api-reference/ai/mark-false-positive",
+              "api-reference/ai/device-insights"
+            ]
           }
         ]
       }
