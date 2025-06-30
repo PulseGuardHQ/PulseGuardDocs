@@ -1,0 +1,17 @@
+---
+openapi: 'POST /api/v1beta/device-monitoring'
+---
+
+This endpoint allows you to add a new device to your account for monitoring.
+
+### Body
+
+<ParamField body="name" type="string" required>
+  A name for your device.
+</ParamField>
+<ParamField body="description" type="string">
+  An optional description for the device.
+</ParamField>
+<ParamField body="os" type="string">
+  The operating system of the device (e.g., `linux`, `windows`).
+</ParamField> 

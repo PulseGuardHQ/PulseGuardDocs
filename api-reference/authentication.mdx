@@ -1,0 +1,25 @@
+---
+title: 'Authentication'
+description: 'How to authenticate with the PulseGuard API.'
+---
+
+The PulseGuard API uses token-based authentication via Laravel Sanctum. All API requests must include a valid authentication token.
+
+You can generate and manage your API tokens on your [profile page](https://app.pulseguard.nl/profile) under the "API Tokens" section.
+
+## Headers
+
+All API requests must include the following headers:
+- `Authorization`: `Bearer your_token_here`
+- `Accept`: `application/json`
+- `Content-Type`: `application/json` (for POST/PUT/PATCH requests)
+
+## Example Request
+
+Here is an example of how to make an authenticated request using `cURL`:
+
+```bash
+curl -X GET "https://app.pulseguard.nl/api/v1beta/domains" \\
+  -H "Authorization: Bearer your_token_here" \\
+  -H "Accept: application/json"
+``` 

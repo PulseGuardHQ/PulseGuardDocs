@@ -1,0 +1,14 @@
+---
+openapi: 'POST /api/v1beta/toolbox/port-scan'
+---
+
+This endpoint performs a port scan on a domain or IP address.
+
+### Body
+
+<ParamField body="domain" type="string" required>
+  The domain or IP address to scan.
+</ParamField>
+<ParamField body="ports" type="string">
+  A comma-separated list of ports to scan (e.g., `80,443,3306`). Defaults to common ports.
+</ParamField> 
