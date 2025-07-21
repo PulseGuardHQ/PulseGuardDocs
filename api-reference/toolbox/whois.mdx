@@ -1,11 +1,9 @@
 ---
-openapi: 'POST /api/v1beta/toolbox/whois'
+openapi: 'POST /v1beta/toolbox/whois'
 ---
 
-This endpoint requests WHOIS information for a domain.
+This endpoint performs WHOIS domain lookup to retrieve registration information.
 
-### Body
-
-<ParamField body="domain" type="string" required>
-  The domain to perform the WHOIS lookup on.
-</ParamField> 
+<Info>
+**Expert Plan Required** - This endpoint requires an active Expert Plan subscription for API access.
+</Info> 

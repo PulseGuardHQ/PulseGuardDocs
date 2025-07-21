@@ -8,6 +8,15 @@
     "dark": "#2563EB"
   },
   "favicon": "/favicon.ico",
+  "api": {
+    "playground": {
+      "display": "interactive"
+    },
+    "examples": {
+      "languages": ["curl", "python", "javascript", "php"],
+      "defaults": "required"
+    }
+  },
   "navigation": {
     "tabs": [
       {
@@ -85,6 +94,13 @@
               "resources/subscription-plans",
               "resources/support"
             ]
+          },
+          {
+            "group": "Updates",
+            "pages": [
+              "changelog",
+              "development"
+            ]
           }
         ]
       },
@@ -99,7 +115,17 @@
             ]
           },
           {
-            "group": "Endpoints",
+            "group": "Interactive Playground",
+            "pages": [
+              "api-playground"
+            ]
+          },
+          {
+            "group": "Auto-Generated API",
+            "openapi": "openapi.yaml"
+          },
+          {
+            "group": "Manual API Pages",
             "pages": [
               "api-reference/domains/list",
               "api-reference/domains/get",

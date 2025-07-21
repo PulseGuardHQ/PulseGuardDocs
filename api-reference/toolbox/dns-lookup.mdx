@@ -1,11 +1,9 @@
 ---
-openapi: 'POST /api/v1beta/toolbox/dns-lookup'
+openapi: 'POST /v1beta/toolbox/dns-lookup'
 ---
 
-This endpoint requests DNS information for a domain.
+This endpoint performs DNS record lookup for a specified domain.
 
-### Body
-
-<ParamField body="domain" type="string" required>
-  The domain to perform the DNS lookup on.
-</ParamField> 
+<Info>
+**Expert Plan Required** - This endpoint requires an active Expert Plan subscription for API access.
+</Info> 

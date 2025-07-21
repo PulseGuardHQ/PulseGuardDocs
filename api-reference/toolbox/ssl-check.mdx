@@ -1,11 +1,9 @@
 ---
-openapi: 'POST /api/v1beta/toolbox/ssl-check'
+openapi: 'POST /v1beta/toolbox/ssl-check'
 ---
 
-This endpoint requests SSL certificate information for a domain.
+This endpoint performs SSL certificate validation and retrieval for a specified URL.
 
-### Body
-
-<ParamField body="domain" type="string" required>
-  The domain to perform the SSL check on.
-</ParamField> 
+<Info>
+**Expert Plan Required** - This endpoint requires an active Expert Plan subscription for API access.
+</Info> 
