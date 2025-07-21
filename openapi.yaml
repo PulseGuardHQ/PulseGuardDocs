@@ -344,7 +344,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 
   # Domain Monitoring API
-  /v1/domains:
+  /v1beta/domains:
     get:
       tags: [Domains]
       summary: List domains
@@ -427,7 +427,7 @@ paths:
         '422':
           $ref: '#/components/responses/ValidationError'
 
-  /v1/domains/{uuid}:
+  /v1beta/domains/{uuid}:
     get:
       tags: [Domains]
       summary: Get domain
@@ -523,7 +523,7 @@ paths:
           $ref: '#/components/responses/NotFound'
 
   # Device Management API
-  /v1/devices:
+  /v1beta/devices:
     get:
       tags: [Devices]
       summary: List devices
@@ -603,7 +603,7 @@ paths:
         '422':
           $ref: '#/components/responses/ValidationError'
 
-  /v1/devices/{uuid}:
+  /v1beta/devices/{uuid}:
     get:
       tags: [Devices]
       summary: Get device
@@ -695,7 +695,7 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 
-  /v1/devices/{uuid}/regenerate-token:
+  /v1beta/devices/{uuid}/regenerate-token:
     post:
       tags: [Devices]
       summary: Regenerate device token
@@ -726,7 +726,7 @@ paths:
           $ref: '#/components/responses/NotFound'
 
   # Service Monitoring API
-  /v1/services:
+  /v1beta/services:
     get:
       tags: [Service Monitors]
       summary: List service monitors
@@ -820,7 +820,7 @@ paths:
         '422':
           $ref: '#/components/responses/ValidationError'
 
-  /v1/services/{uuid}:
+  /v1beta/services/{uuid}:
     get:
       tags: [Service Monitors]
       summary: Get service monitor
@@ -924,7 +924,7 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 
-  /v1/services/{uuid}/check:
+  /v1beta/services/{uuid}/check:
     post:
       tags: [Service Monitors]
       summary: Manual service check
@@ -961,7 +961,7 @@ paths:
           $ref: '#/components/responses/NotFound'
 
   # Toolbox API
-  /v1/toolbox/dns-lookup:
+  /v1beta/toolbox/dns-lookup:
     post:
       tags: [Toolbox]
       summary: DNS lookup
@@ -1018,7 +1018,7 @@ paths:
         '422':
           $ref: '#/components/responses/ValidationError'
 
-  /v1/toolbox/whois:
+  /v1beta/toolbox/whois:
     post:
       tags: [Toolbox]
       summary: WHOIS lookup
@@ -1071,7 +1071,7 @@ paths:
         '422':
           $ref: '#/components/responses/ValidationError'
 
-  /v1/toolbox/ssl-check:
+  /v1beta/toolbox/ssl-check:
     post:
       tags: [Toolbox]
       summary: SSL certificate check
@@ -1125,7 +1125,7 @@ paths:
         '422':
           $ref: '#/components/responses/ValidationError'
 
-  /v1/toolbox/port-scan:
+  /v1beta/toolbox/port-scan:
     post:
       tags: [Toolbox]
       summary: Port scan
@@ -1180,7 +1180,7 @@ paths:
         '422':
           $ref: '#/components/responses/ValidationError'
 
-  /v1/toolbox/ip-location:
+  /v1beta/toolbox/ip-location:
     post:
       tags: [Toolbox]
       summary: IP geolocation
@@ -1233,7 +1233,7 @@ paths:
         '422':
           $ref: '#/components/responses/ValidationError'
 
-  /v1/toolbox/get-ip:
+  /v1beta/toolbox/get-ip:
     get:
       tags: [Toolbox]
       summary: Get client IP
@@ -1260,7 +1260,7 @@ paths:
           $ref: '#/components/responses/Forbidden'
 
   # Statistics API
-  /v1/stats/domains/{uuid}/response-time/history:
+  /v1beta/stats/domains/{uuid}/response-time/history:
     get:
       tags: [Statistics]
       summary: Get domain response time history
@@ -1312,7 +1312,7 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 
-  /v1/stats/domains/{uuid}/response-time/stats:
+  /v1beta/stats/domains/{uuid}/response-time/stats:
     get:
       tags: [Statistics]
       summary: Get domain response time statistics
