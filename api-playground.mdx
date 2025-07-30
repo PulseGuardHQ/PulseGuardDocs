@@ -53,11 +53,11 @@ In any API endpoint playground:
 ### Domain Monitoring
 ```bash
 # List all domains
-curl -X GET "https://app.pulseguard.nl/api/v1/domains" \
+curl -X GET "https://app.pulseguard.nl/api/v2/domains" \
   -H "Authorization: Bearer YOUR_API_TOKEN"
 
 # Create a new domain monitor
-curl -X POST "https://app.pulseguard.nl/api/v1/domains" \
+curl -X POST "https://app.pulseguard.nl/api/v2/domains" \
   -H "Authorization: Bearer YOUR_API_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -70,18 +70,18 @@ curl -X POST "https://app.pulseguard.nl/api/v1/domains" \
 ### Device Management
 ```bash
 # Get device metrics
-curl -X GET "https://app.pulseguard.nl/api/v1/devices/DEVICE-UUID" \
+curl -X GET "https://app.pulseguard.nl/api/v2/devices/DEVICE-UUID" \
   -H "Authorization: Bearer YOUR_API_TOKEN"
 
 # Regenerate device token
-curl -X POST "https://app.pulseguard.nl/api/v1/devices/DEVICE-UUID/regenerate-token" \
+curl -X POST "https://app.pulseguard.nl/api/v2/devices/DEVICE-UUID/regenerate-token" \
   -H "Authorization: Bearer YOUR_API_TOKEN"
 ```
 
 ### Toolbox Utilities
 ```bash
 # DNS lookup
-curl -X POST "https://app.pulseguard.nl/api/v1/toolbox/dns-lookup" \
+curl -X POST "https://app.pulseguard.nl/api/v2/toolbox/dns-lookup" \
   -H "Authorization: Bearer YOUR_API_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -90,7 +90,7 @@ curl -X POST "https://app.pulseguard.nl/api/v1/toolbox/dns-lookup" \
   }'
 
 # SSL certificate check
-curl -X POST "https://app.pulseguard.nl/api/v1/toolbox/ssl-check" \
+curl -X POST "https://app.pulseguard.nl/api/v2/toolbox/ssl-check" \
   -H "Authorization: Bearer YOUR_API_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -191,3 +191,4 @@ Rate limit information is shown in response headers:
 ---
 
 Ready to start testing? Head over to our [API Reference](/api-reference) and try out the interactive playground!
+

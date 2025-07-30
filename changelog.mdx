@@ -7,6 +7,52 @@ description: "Track all PulseGuard updates, new features, and improvements"
 
 All notable changes to PulseGuard will be documented in this page.
 
+## [2.1.1] - 2025-07-26
+
+### 🔒 Security
+- **Fixed AuthenticateAgent Middleware**: Implemented proper authentication (was completely open)
+- **Enhanced Token Validation**: Added SHA-256 hashing for device API tokens  
+- **API Access Control**: Fixed inconsistency between plan restrictions and middleware
+- **Token Security**: Improved token generation and validation across all authentication systems
+- **Sanctum Authentication**: Fixed critical auth middleware issue preventing API token access
+
+### ✨ Added
+- **OAuth Authentication**: Support for Google, GitHub, and Discord OAuth providers
+- **OAuth API Endpoints**: Complete OAuth flow for headless applications
+- **Migration Tools**: Commands to hash existing plain text tokens securely
+- **Unified Token System**: Consolidated legacy API tokens with modern Sanctum tokens
+- **Token Migration Command**: `migrate:user-tokens-to-sanctum` for seamless upgrade
+- **Comprehensive API Documentation**: Added missing endpoint documentation
+  - PulseAI API documentation with overview and examples
+  - Statistics API guide with analytics and metrics
+  - Organizations API documentation for Enterprise features
+  - Status Pages API guide for public status pages
+- **Standardized Response Format**: New `ApiResponse` trait for consistent API responses
+- **Enhanced Plan Restrictions**: Added `plan:pulseai` middleware and validation
+
+### 🔧 Improved
+- **API Route Structure**: Cleaned up duplicate routes and improved organization
+- **Authentication Flow**: Consolidated token systems with clear separation of concerns
+- **Token Management**: Unified legacy and modern token systems into single Sanctum-based solution
+- **Profile Page**: Streamlined token management interface with modern UI
+- **Plan-based Access**: Aligned middleware with configuration for consistent API access
+- **Error Handling**: Better error messages for authentication failures
+- **API Documentation**: Completely rewritten introduction with comprehensive feature overview
+- **Plan Middleware**: Added missing plan restrictions to toolbox, PulseAI, and device endpoints
+- **Response Standardization**: Consistent JSON response format across all endpoints
+
+### 🐛 Fixed
+- **Critical Security**: AuthenticateAgent middleware was allowing all requests through
+- **Token Validation**: Device tokens now properly hashed and validated
+- **Route Conflicts**: Removed duplicate logout test routes
+- **API Consistency**: Plan access checks now match configuration settings
+- **Missing Plan Checks**: Added plan validation to v2 toolbox and PulseAI routes
+- **Authentication Gaps**: Ensured all API endpoints have proper authentication middleware
+- **Sanctum Configuration**: Fixed auth guard configuration and middleware conflicts
+- **Config Serialization**: Resolved Sentry closure preventing configuration caching
+- **API Token Routes**: Added missing `/api/tokens` endpoints for token management
+- **Route Duplication**: Cleaned up duplicate `/api/user` route definitions
+
 ## [2.1.0] - 2025-01-21
 
 ### ✨ Added
@@ -22,7 +68,7 @@ All notable changes to PulseGuard will be documented in this page.
 
 ### 🔧 Improved
 - **API Documentation**: Complete OpenAPI 3.0.3 specification with detailed schemas
-- **Route Organization**: Better API versioning with v1 and v2 endpoints
+- **Route Organization**: Better API versioning with v2 and v2 endpoints
 - **Authentication**: Enhanced middleware for API access control
 - **Error Handling**: Comprehensive error responses with detailed messages
 - **Performance**: Optimized API responses and caching
@@ -35,7 +81,7 @@ All notable changes to PulseGuard will be documented in this page.
 ### 🔄 Changed
 - **API Structure**: Reorganized endpoints for better logical grouping
 - **Documentation**: Migrated to auto-generated API reference from OpenAPI spec
-- **Versioning**: Deprecated v1beta endpoints in favor of v1 and v2
+- **Versioning**: Deprecated v2 endpoints in favor of v2 and v2
 
 ## [2.0.5] - 2025-01-15
 
@@ -77,7 +123,7 @@ All notable changes to PulseGuard will be documented in this page.
 - **Security**: End-to-end encryption and advanced threat detection
 
 ### 🗑️ Deprecated
-- **Legacy API v1beta**: Maintained for backward compatibility
+- **Legacy API v2**: Maintained for backward compatibility
 
 ## [1.5.0] - 2024-10-15
 
@@ -145,9 +191,10 @@ For detailed migration instructions between major versions, visit our [Migration
 
 ### API Versioning
 - **v2**: Current stable API with modern features
-- **v1**: Stable API with all current features
-- **v1beta**: Deprecated, maintained for backward compatibility
+- **v2**: Stable API with all current features
+- **v2**: Deprecated, maintained for backward compatibility
 
 ---
 
 *Need help with a specific version or feature? Check our [Support](/resources/support) page or contact us at info@pulseguard.nl*
+
