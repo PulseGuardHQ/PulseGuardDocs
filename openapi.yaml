@@ -238,8 +238,11 @@ components:
           type: string
           description: Success message
         data:
-          type: object
-          description: Response data
+          oneOf:
+            - type: object
+              description: Response data as object
+            - type: array  
+              description: Response data as array
       required: [success, message]
 
   parameters:
@@ -344,7 +347,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 
   # Domain Monitoring API
-  /v1beta/domains:
+  /v2/domains:
     get:
       tags: [Domains]
       summary: List domains
@@ -427,7 +430,7 @@ paths:
         '422':
           $ref: '#/components/responses/ValidationError'
 
-  /v1beta/domains/{uuid}:
+  /v2/domains/{uuid}:
     get:
       tags: [Domains]
       summary: Get domain
@@ -523,7 +526,7 @@ paths:
           $ref: '#/components/responses/NotFound'
 
   # Device Management API
-  /v1beta/devices:
+  /v2/devices:
     get:
       tags: [Devices]
       summary: List devices
@@ -603,7 +606,7 @@ paths:
         '422':
           $ref: '#/components/responses/ValidationError'
 
-  /v1beta/devices/{uuid}:
+  /v2/devices/{uuid}:
     get:
       tags: [Devices]
       summary: Get device
@@ -695,7 +698,7 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 
-  /v1beta/devices/{uuid}/regenerate-token:
+  /v2/devices/{uuid}/regenerate-token:
     post:
       tags: [Devices]
       summary: Regenerate device token
@@ -726,7 +729,7 @@ paths:
           $ref: '#/components/responses/NotFound'
 
   # Service Monitoring API
-  /v1beta/services:
+  /v2/services:
     get:
       tags: [Service Monitors]
       summary: List service monitors
@@ -820,7 +823,7 @@ paths:
         '422':
           $ref: '#/components/responses/ValidationError'
 
-  /v1beta/services/{uuid}:
+  /v2/services/{uuid}:
     get:
       tags: [Service Monitors]
       summary: Get service monitor
@@ -924,7 +927,7 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 
-  /v1beta/services/{uuid}/check:
+  /v2/services/{uuid}/check:
     post:
       tags: [Service Monitors]
       summary: Manual service check
@@ -961,7 +964,7 @@ paths:
           $ref: '#/components/responses/NotFound'
 
   # Toolbox API
-  /v1beta/toolbox/dns-lookup:
+  /v2/toolbox/dns-lookup:
     post:
       tags: [Toolbox]
       summary: DNS lookup
@@ -1018,7 +1021,7 @@ paths:
         '422':
           $ref: '#/components/responses/ValidationError'
 
-  /v1beta/toolbox/whois:
+  /v2/toolbox/whois:
     post:
       tags: [Toolbox]
       summary: WHOIS lookup
@@ -1071,7 +1074,7 @@ paths:
         '422':
           $ref: '#/components/responses/ValidationError'
 
-  /v1beta/toolbox/ssl-check:
+  /v2/toolbox/ssl-check:
     post:
       tags: [Toolbox]
       summary: SSL certificate check
@@ -1125,7 +1128,7 @@ paths:
         '422':
           $ref: '#/components/responses/ValidationError'
 
-  /v1beta/toolbox/port-scan:
+  /v2/toolbox/port-scan:
     post:
       tags: [Toolbox]
       summary: Port scan
@@ -1180,7 +1183,7 @@ paths:
         '422':
           $ref: '#/components/responses/ValidationError'
 
-  /v1beta/toolbox/ip-location:
+  /v2/toolbox/ip-location:
     post:
       tags: [Toolbox]
       summary: IP geolocation
@@ -1233,7 +1236,7 @@ paths:
         '422':
           $ref: '#/components/responses/ValidationError'
 
-  /v1beta/toolbox/get-ip:
+  /v2/toolbox/get-ip:
     get:
       tags: [Toolbox]
       summary: Get client IP
@@ -1260,7 +1263,7 @@ paths:
           $ref: '#/components/responses/Forbidden'
 
   # Statistics API
-  /v1beta/stats/domains/{uuid}/response-time/history:
+  /v2/stats/domains/{uuid}/response-time/history:
     get:
       tags: [Statistics]
       summary: Get domain response time history
@@ -1312,7 +1315,7 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 
-  /v1beta/stats/domains/{uuid}/response-time/stats:
+  /v2/stats/domains/{uuid}/response-time/stats:
     get:
       tags: [Statistics]
       summary: Get domain response time statistics
@@ -1365,7 +1368,7 @@ paths:
           $ref: '#/components/responses/NotFound'
 
   # AI & Anomaly Detection
-  /domains/{domainId}/analyze-anomalies:
+  /v2/domains/{domainId}/analyze-anomalies:
     post:
       tags: [AI & Anomalies]
       summary: Analyze domain anomalies
@@ -1402,7 +1405,7 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 
-  /domains/{domainId}/anomalies:
+  /v2/domains/{domainId}/anomalies:
     get:
       tags: [AI & Anomalies]
       summary: Get domain anomalies
@@ -1445,7 +1448,7 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 
-  /anomalies/{anomalyId}/resolve:
+  /v2/anomalies/{anomalyId}/resolve:
     post:
       tags: [AI & Anomalies]
       summary: Resolve anomaly
@@ -1483,7 +1486,7 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 
-  /anomalies/{anomalyId}/false-positive:
+  /v2/anomalies/{anomalyId}/false-positive:
     post:
       tags: [AI & Anomalies]
       summary: Mark as false positive
@@ -1522,7 +1525,7 @@ paths:
           $ref: '#/components/responses/NotFound'
 
   # Reports API
-  /reports/data:
+  /v2/reports/data:
     get:
       tags: [Reports]
       summary: Get report data

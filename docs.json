@@ -221,6 +221,14 @@
       "href": "https://app.pulseguard.nl"
     }
   },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude"
+    ]
+  },
   "footer": {
     "socials": {
       "linkedin": "https://linkedin.com/company/pulseguardnl",
